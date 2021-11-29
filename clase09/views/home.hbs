@@ -1,0 +1,15 @@
+
+{{#if showList}}
+    <ul>
+        {{#each list}}
+            <li><b>{{this.name}}</b> de tipo: {{this.type}}</li>
+        {{/each}}
+    </ul>
+{{else}}
+    No hay lista
+{{/if}}
+
+
+<hr>
+
+{{> mas }}
