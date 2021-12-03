@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('ejs/head'); %>
+</head>
+<body>
+    <h1 style="color:blue;"><%= title %></h1>
+
+    <meter 
+        min=<%= min %>
+        max=<%= max %>
+        value=<%= level %>
+    >
+
+    </meter>
+</body>
+</html>

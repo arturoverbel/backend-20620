@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Harry Potter",
+        "pages": 320,
+        "author": "JK Rowling",
+        "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/910ityjoncL.jpg"
+    },
+    {
+        "title": "I, robot",
+        "pages": 130,
+        "author": "Isaac Asimov",
+        "thumbnail": "https://m.media-amazon.com/images/I/41ED86iNFkL.jpg"
+    }
+]

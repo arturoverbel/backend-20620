@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      
+    <% if (list.length == 0) {%>
+        <h2>No hay libros</h2>
+    <% } else { %>
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>Páginas</th>
+                <th>Autor</th>
+                <th>Imagen</th>
+            </tr>
+            <% list.forEach((book) => { %>
+                <tr>
+                    <td><%= book.title %></td>
+                    <td><%= book.pages %></td>
+                    <td><%= book.author %></td>
+                    <td><img src="<%= book.thumbnail %>" width="100px;"></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% } %>
+
+<a href="/">Ingresar nuevo libro</a>
+
+</body>
+</html>
