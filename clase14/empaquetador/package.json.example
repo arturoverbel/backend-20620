@@ -1,0 +1,17 @@
+{
+  "name": "empaquetador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack ./a1.js ./a2.js ./a3.js ./a4.js --mode=production",
+    "dev": "webpack ./a1.js ./a2.js ./a3.js ./a4.js -w --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

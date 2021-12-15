@@ -1,0 +1,1 @@
+setTimeout((()=>{console.log("Saludos a Facundo")}),1e3),setTimeout((()=>{console.log("Feliz Navidad Carlos !! =D")}),2e3),setTimeout((()=>{console.log("Hola Gaston !!!")}),3e3);
