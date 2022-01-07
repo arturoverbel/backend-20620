@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div class='formContainer'>
+                <form id='myForm' method="post">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">precio</label>
+                        <input class="form-control" id="precio">
+                    </div>
+                        <label for="thumbnail" class="form-label">Imagen</label>
+                        <input class="form-control" id="thumbnail">
+                        <button type="submit" class="btn btn-primary">Cargar</button>
+                    </div>
+                </form>
+            </div>
+            <div class='producsAndChatContainer'>
+                <div class='products'>
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th scope="col">nombre</th>
+                                <th scope="col">precio</th>
+                                <th scope="col">img</th>
+                            </tr>
+                        </thead>
+                        <tbody class='productContainer'>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='chat'>
+                    <form id=myChat>
+                        <div class="mb-3">
+                            <label for="tex" class="form-label">mensaje</label>
+                            <input class="form-control" id="text">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    <div id="messages"></div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</html>
