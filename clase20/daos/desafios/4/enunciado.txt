@@ -1,0 +1,19 @@
+Conectarse a la base MongoDB Atlas con los clientes CLI, Robo 3T y Node.js
+
+Mediante la consola CLI insertar estos documentos en una base llamada ecommerce, colección usuarios
+
+[
+    { nombre: 'Lucas', apellido: 'Blanco', dni: '30355874' },
+    { nombre: 'María', apellido: 'García', dni: '29575148' },
+    { nombre: 'Tomas', apellido: 'Sierra', dni: '38654790' },
+    { nombre: 'Carlos', apellido: 'Fernández', dni: '26935670' }
+]
+
+A través de un proyecto Node.js, listaremos estos datos representándolos en la consola.
+luego con el mismo proyecto, incorporaremos un usuario más: 
+    { nombre: 'Federico', apellido: 'Perez', dni: '320118321' }
+Utilizar en este proyecto sintaxis de Promesas con async await e import para la importación de módulos.
+
+Con Robo 3T borraremos al usuario llamado Tomas.
+
+Con Mongo CLI actualizaremos el usuario lammado 'Carlos' al nombre 'Juan Carlos' y luego listaremos los documentos finales.

@@ -1,0 +1,8 @@
+> node .
+Base de datos conectada
+usuario agregado!
+{"_id":"604f3c476b6b75d87a853c6d","nombre":"Lucas","apellido":"Blanco","dni":"30355874"}
+{"_id":"604f3c476b6b75d87a853c6e","nombre":"María","apellido":"García","dni":"29575148"}
+{"_id":"604f3c476b6b75d87a853c6f","nombre":"Tomas","apellido":"Sierra","dni":"38654790"}
+{"_id":"604f3c476b6b75d87a853c70","nombre":"Carlos","apellido":"Fernández","dni":"26935670"}
+{"_id":"604f3c9578e8253954833605","nombre":"Federico","apellido":"Perez","dni":"320118321","__v":0}
