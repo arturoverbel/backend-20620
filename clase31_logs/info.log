@@ -1,0 +1,23 @@
+[2022-02-23T17:41:00.430] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:41:00.430] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:41:34.763] [WARN] archivo - La cerveza se esta calentando
+[2022-02-23T17:41:34.763] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:41:34.764] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:41:43.239] [WARN] archivo - La cerveza se esta calentando
+[2022-02-23T17:41:43.239] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:41:43.239] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:43:03.453] [WARN] archivo - La cerveza se esta calentando
+[2022-02-23T17:43:03.453] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:43:03.453] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:43:52.979] [WARN] archivo - La cerveza se esta calentando
+[2022-02-23T17:43:52.979] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:43:52.979] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:43:52.979] [ERROR] todo - Se cayo la cerveza
+[2022-02-23T17:43:52.979] [FATAL] todo - Se quebro la botella
+[2022-02-23T17:46:32.236] [WARN] archivo - La cerveza se esta calentando
+[2022-02-23T17:46:32.236] [ERROR] archivo - Se cayo la cerveza
+[2022-02-23T17:46:32.236] [FATAL] archivo - Se quebro la botella
+[2022-02-23T17:46:32.237] [ERROR] todo - Se cayo la cerveza
+[2022-02-23T17:46:32.237] [FATAL] todo - Se quebro la botella
+{"level":"error","message":"log error"}
+{"level":"error","message":"log error"}

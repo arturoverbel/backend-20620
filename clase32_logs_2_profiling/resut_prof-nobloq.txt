@@ -1,0 +1,252 @@
+Statistical profiling result from nobloq_v8.log, (1492 ticks, 1 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    581   38.9%          /home/r2/.nvm/versions/node/v14.15.4/bin/node
+      7    0.5%          /usr/lib/x86_64-linux-gnu/libc-2.31.so
+      1    0.1%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      5    0.3%    0.6%  LazyCompile: *normalizeString path.js:52:25
+      2    0.1%    0.2%  LazyCompile: *hidden internal/errors.js:286:25
+      1    0.1%    0.1%  LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+
+ [C++]:
+   ticks  total  nonlib   name
+    846   56.7%   93.7%  epoll_pwait
+     11    0.7%    1.2%  __write
+      8    0.5%    0.9%  __libc_read
+      6    0.4%    0.7%  fwrite
+      4    0.3%    0.4%  do_futex_wait.constprop.0
+      4    0.3%    0.4%  __pthread_cond_timedwait
+      4    0.3%    0.4%  __lll_lock_wait
+      3    0.2%    0.3%  __GI___pthread_mutex_unlock
+      1    0.1%    0.1%  std::ostream::put(char)
+      1    0.1%    0.1%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      1    0.1%    0.1%  shutdown
+      1    0.1%    0.1%  cfree
+      1    0.1%    0.1%  __libc_malloc
+      1    0.1%    0.1%  __errno_location
+      1    0.1%    0.1%  __GI___pthread_mutex_init
+      1    0.1%    0.1%  __GI___pthread_getspecific
+
+ [Summary]:
+   ticks  total  nonlib   name
+      8    0.5%    0.9%  JavaScript
+    894   59.9%   99.0%  C++
+     38    2.5%    4.2%  GC
+    589   39.5%          Shared libraries
+      1    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+      4   33.3%    0.3%  __write
+      3   25.0%    0.2%  fwrite
+      2   16.7%    0.1%  __GI___pthread_mutex_unlock
+      1    8.3%    0.1%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      1    8.3%    0.1%  cfree
+      1    8.3%    0.1%  __libc_malloc
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    846   56.7%  epoll_pwait
+
+    581   38.9%  /home/r2/.nvm/versions/node/v14.15.4/bin/node
+    291   50.1%    /home/r2/.nvm/versions/node/v14.15.4/bin/node
+     57   19.6%      LazyCompile: ~pbkdf2Sync internal/crypto/pbkdf2.js:44:20
+     57  100.0%        LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:15:17
+     57  100.0%          LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+     57  100.0%            LazyCompile: ~next /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/route.js:114:16
+     37   12.7%      LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+     35   94.6%        LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      3    8.6%          Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      3    8.6%          Eval: ~<anonymous> http.js:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.7%          Eval: ~<anonymous> tty.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.7%          Eval: ~<anonymous> stream.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.7%          Eval: ~<anonymous> internal/source_map/source_map_cache.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.7%          Eval: ~<anonymous> fs.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.7%          Eval: ~<anonymous> crypto.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          LazyCompile: ~setupProcessObject internal/bootstrap/node.js:271:28
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    2.9%          LazyCompile: ~setupPrepareStackTrace internal/bootstrap/node.js:252:32
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    2.9%          LazyCompile: ~setupBuffer internal/bootstrap/node.js:300:21
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    2.9%          LazyCompile: ~lazyLoadStreams fs.js:1994:25
+      1  100.0%            LazyCompile: ~get ReadStream fs.js:2101:17
+      1    2.9%          LazyCompile: ~initializeCJSLoader internal/bootstrap/pre_execution.js:407:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution internal/bootstrap/pre_execution.js:19:36
+      1    2.9%          Eval: ~<anonymous> timers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/url.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/modules/esm/loader.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/modules/esm/get_source.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/modules/cjs/helpers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/main/run_main_module.js:1:1
+      1    2.9%          Eval: ~<anonymous> internal/console/constructor.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/cluster/round_robin_handle.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> internal/child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> events.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> cluster.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> buffer.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    2.9%          Eval: ~<anonymous> _http_client.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    5.4%        LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:219:25
+      2  100.0%          LazyCompile: ~loadNativeModule internal/modules/cjs/helpers.js:31:26
+      2  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+     23    7.9%      LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+     23  100.0%        LazyCompile: ~Socket._writeGeneric net.js:759:42
+     23  100.0%          LazyCompile: ~Socket._writev net.js:791:36
+     23  100.0%            LazyCompile: ~doWrite internal/streams/writable.js:367:17
+     19    6.5%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:964:18
+     19  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+     19  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+     19  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+     16    5.5%      /home/r2/.nvm/versions/node/v14.15.4/bin/node
+      3   18.8%        LazyCompile: ~pipe /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/send/index.js:510:43
+      3  100.0%          LazyCompile: ~serveStatic /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/serve-static/index.js:72:31
+      3  100.0%            LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      3   18.8%        LazyCompile: ~format /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/content-type/index.js:65:17
+      3  100.0%          LazyCompile: ~setCharset /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/utils.js:247:41
+      3  100.0%            LazyCompile: ~send /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:107:25
+      1    6.3%        LazyCompile: ~pathtoRegexp /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          LazyCompile: ~Layer /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~route /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:497:29
+      1    6.3%        LazyCompile: ~parseQueryStringKeys /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/qs/lib/parse.js:149:46
+      1  100.0%          LazyCompile: ~module.exports /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/qs/lib/parse.js:237:27
+      1  100.0%            LazyCompile: ~parseExtendedQueryString /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/utils.js:288:34
+      1    6.3%        LazyCompile: ~header /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:759:29
+      1  100.0%          LazyCompile: ~send /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:107:25
+      1  100.0%            LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      1    6.3%        LazyCompile: ~expressInit /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%          LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:288:23
+      1    6.3%        LazyCompile: ~checkInvalidHeaderChar _http_common.js:230:32
+      1  100.0%          LazyCompile: ~<anonymous> _http_outgoing.js:546:45
+      1  100.0%            LazyCompile: ~hidden internal/errors.js:286:25
+      1    6.3%        LazyCompile: ~FastBuffer internal/buffer.js:951:1
+      1  100.0%          LazyCompile: ~alloc buffer.js:372:30
+      1  100.0%            LazyCompile: ~pbkdf2 internal/crypto/pbkdf2.js:18:16
+      1    6.3%        LazyCompile: ~<anonymous> internal/per_context/primordials.js:23:10
+      1  100.0%          LazyCompile: ~resolveExports internal/modules/cjs/loader.js:422:24
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1    6.3%        Eval: ~<anonymous> internal/util/inspect.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      1    6.3%        Eval: ~<anonymous> internal/url.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      1    6.3%        Eval: ~<anonymous> internal/encoding.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      8    2.7%      LazyCompile: ~setHeader _http_outgoing.js:556:57
+      6   75.0%        LazyCompile: ~header /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:759:29
+      6  100.0%          LazyCompile: ~contentType /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:599:32
+      6  100.0%            LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      2   25.0%        LazyCompile: ~expressInit /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/middleware/init.js:29:30
+      2  100.0%          LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            LazyCompile: ~trim_prefix /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:288:23
+      6    2.1%      LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      6  100.0%        LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:61:57
+      6  100.0%          LazyCompile: ~wrap.ondone internal/crypto/pbkdf2.js:34:17
+      6    2.1%      LazyCompile: ~nextTick internal/process/task_queues.js:101:18
+      3   50.0%        LazyCompile: ~onwrite internal/streams/writable.js:394:17
+      3  100.0%          LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:151:30
+      3  100.0%            LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+      2   33.3%        LazyCompile: ~emitReadable internal/streams/readable.js:554:22
+      2  100.0%          LazyCompile: ~onEofChunk internal/streams/readable.js:524:20
+      2  100.0%            LazyCompile: ~readableAddChunk internal/streams/readable.js:231:26
+      1   16.7%        LazyCompile: ~resume internal/streams/readable.js:958:16
+      1  100.0%          LazyCompile: ~Readable.resume internal/streams/readable.js:944:37
+      1  100.0%            LazyCompile: ~_dump _http_incoming.js:290:49
+      6    2.1%      LazyCompile: ~end _http_outgoing.js:769:45
+      6  100.0%        LazyCompile: ~send /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:107:25
+      6  100.0%          LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      6  100.0%            LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:61:57
+      5    1.7%      LazyCompile: ~send /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:107:25
+      5  100.0%        LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      4   80.0%          LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:61:57
+      4  100.0%            LazyCompile: ~wrap.ondone internal/crypto/pbkdf2.js:34:17
+      1   20.0%          LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:15:17
+      1  100.0%            LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      5    1.7%      LazyCompile: ~internalBinding internal/bootstrap/loaders.js:137:45
+      1   20.0%        Eval: ~<anonymous> net.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      1   20.0%        Eval: ~<anonymous> internal/util.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      1   20.0%        Eval: ~<anonymous> internal/modules/esm/module_job.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      1   20.0%        Eval: ~<anonymous> crypto.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:219:25
+      1   20.0%        Eval: ~<anonymous> _http_common.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      5    1.7%      LazyCompile: ~Hash internal/crypto/hash.js:37:14
+      5  100.0%        LazyCompile: ~createHash crypto.js:114:20
+      5  100.0%          LazyCompile: ~entitytag /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/etag/index.js:39:20
+      5  100.0%            LazyCompile: ~etag /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/etag/index.js:70:15
+      5    1.7%      LazyCompile: *nextTick internal/process/task_queues.js:101:18
+      2   40.0%        LazyCompile: ~resOnFinish _http_server.js:756:21
+      2  100.0%          LazyCompile: ~emit events.js:264:44
+      2  100.0%            LazyCompile: ~onFinish _http_outgoing.js:764:18
+      2   40.0%        LazyCompile: ~endReadable internal/streams/readable.js:1310:21
+      2  100.0%          LazyCompile: ~Readable.read internal/streams/readable.js:390:35
+      2  100.0%            LazyCompile: ~resume_ internal/streams/readable.js:965:17
+      1   20.0%        LazyCompile: ~resume internal/streams/readable.js:958:16
+      1  100.0%          LazyCompile: ~Readable.resume internal/streams/readable.js:944:37
+      1  100.0%            LazyCompile: ~_dump _http_incoming.js:290:49
+      4    1.4%      LazyCompile: ~writeHead _http_server.js:250:19
+      4  100.0%        LazyCompile: ~_implicitHeader _http_server.js:245:68
+      4  100.0%          LazyCompile: ~write_ _http_outgoing.js:678:16
+      4  100.0%            LazyCompile: ~end _http_outgoing.js:769:45
+      4    1.4%      LazyCompile: ~parse /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/content-type/index.js:106:16
+      4  100.0%        LazyCompile: ~setCharset /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/utils.js:247:41
+      4  100.0%          LazyCompile: ~send /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:107:25
+      4  100.0%            LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      4    1.4%      LazyCompile: ~expressInit /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/middleware/init.js:29:30
+      4  100.0%        LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%          LazyCompile: ~trim_prefix /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:288:23
+      3   75.0%            LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:275:64
+      1   25.0%            LazyCompile: *next /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:176:16
+      4    1.4%      LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:61:57
+      4  100.0%        LazyCompile: ~wrap.ondone internal/crypto/pbkdf2.js:34:17
+      3    1.0%      LazyCompile: ~originalurl /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/parseurl/index.js:65:22
+      3  100.0%        LazyCompile: ~serveStatic /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/serve-static/index.js:72:31
+      3  100.0%          LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+      3  100.0%            LazyCompile: ~trim_prefix /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:288:23
+      3    1.0%      LazyCompile: ~Module._extensions..json internal/modules/cjs/loader.js:1097:39
+      3  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      3  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      3  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      7    1.2%    LazyCompile: ~contentType /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:599:32
+      7  100.0%      LazyCompile: ~sendStatus /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/response.js:358:37
+      7  100.0%        LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:61:57
+      7  100.0%          LazyCompile: ~wrap.ondone internal/crypto/pbkdf2.js:34:17
+

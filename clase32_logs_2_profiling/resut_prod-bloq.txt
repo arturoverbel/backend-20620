@@ -1,0 +1,55 @@
+Statistical profiling result from bloq_v8.log, (27736 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  27670   99.8%          /home/r2/.nvm/versions/node/v14.15.4/bin/node
+      9    0.0%          /usr/lib/x86_64-linux-gnu/libc-2.31.so
+      2    0.0%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      3    0.0%    5.5%  LazyCompile: *normalizeString path.js:52:25
+      2    0.0%    3.6%  LazyCompile: *nextTick internal/process/task_queues.js:101:18
+      1    0.0%    1.8%  RegExp: ^.*[\.\/\\]
+      1    0.0%    1.8%  LazyCompile: *next /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/index.js:176:16
+
+ [C++]:
+   ticks  total  nonlib   name
+     14    0.1%   25.5%  __write
+     13    0.0%   23.6%  __lll_lock_wait
+     12    0.0%   21.8%  epoll_pwait
+      3    0.0%    5.5%  fwrite
+      1    0.0%    1.8%  operator new(unsigned long)
+      1    0.0%    1.8%  __pthread_cond_timedwait
+      1    0.0%    1.8%  __mprotect
+      1    0.0%    1.8%  __libc_malloc
+      1    0.0%    1.8%  __GI___pthread_mutex_lock
+      1    0.0%    1.8%  _IO_file_xsputn
+
+ [Summary]:
+   ticks  total  nonlib   name
+      7    0.0%   12.7%  JavaScript
+     48    0.2%   87.3%  C++
+     33    0.1%   60.0%  GC
+  27681   99.8%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+      7   70.0%    0.0%  __write
+      1   10.0%    0.0%  operator new(unsigned long)
+      1   10.0%    0.0%  fwrite
+      1   10.0%    0.0%  __libc_malloc
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  27670   99.8%  /home/r2/.nvm/versions/node/v14.15.4/bin/node
+  27414   99.1%    /home/r2/.nvm/versions/node/v14.15.4/bin/node
+  27180   99.1%      LazyCompile: ~pbkdf2Sync internal/crypto/pbkdf2.js:44:20
+  27125   99.8%        LazyCompile: ~<anonymous> /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/index.js:32:23
+  27125  100.0%          LazyCompile: ~handle /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/layer.js:86:49
+  27125  100.0%            LazyCompile: ~next /home/r2/Main/coderhouse/js-20620/clase32_logs_2_profiling/node_modules/express/lib/router/route.js:114:16
+
