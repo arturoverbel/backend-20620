@@ -1,0 +1,13 @@
+{
+  "name": "clase37_npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "@arturoverbel/r2_suma": "^1.0.0",
+    "express": "^4.17.3"
+  }
+}
