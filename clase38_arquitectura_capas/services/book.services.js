@@ -1,13 +1,13 @@
 const { getBook, saveBook } = require('../models/book.model.js')
 
-const getBookService = () => {
-    return getBook()
+const getBookService = async () => {
+    return await getBook()
 }
 
-const saveBookService = (data) => {
+const saveBookService = async (data) => {
     data.keyname = data.name.replace(/ /g, '_').toLowerCase();
 
-    return saveBook(data)
+    return await saveBook(data)
 }
 
 module.exports = {

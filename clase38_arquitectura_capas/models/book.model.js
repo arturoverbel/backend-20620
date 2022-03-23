@@ -1,14 +1,13 @@
-const datos = []
-let incremental = 0
+const { options } = require('../config/db')
+const knex = require('knex')(options)
 
-const getBook = () => datos
-
-const saveBook = data => {
-    incremental++
-    data.id = incremental
-    datos.push(data); 
+const getBook = async () => {
+    return await knex.from("books").select("*")
+}
+const saveBook = async data => {
+    await knex("books").insert([data])
     
-    return data 
+    return data
 }
 
 module.exports = {

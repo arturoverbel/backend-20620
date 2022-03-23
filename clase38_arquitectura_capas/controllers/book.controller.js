@@ -1,14 +1,14 @@
 const { getBookService, saveBookService } = require('../services/book.services')
 
-const getBookController = (req, res) => {
-    const datos = getBookService()
+const getBookController = async (req, res) => {
+    const datos = await getBookService()
 
     res.json(datos)
 }
 
-const postSaveBookController = (req, res) => {
+const postSaveBookController = async (req, res) => {
     const dato = req.body
-    const dataReturn = saveBookService(dato)
+    const dataReturn = await saveBookService(dato)
 
     res.status(201).json(dataReturn)
 }
