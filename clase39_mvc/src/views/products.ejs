@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('ejs/head'); %>
+</head>
+<body>
+    <h1 style="color:blue;">Coderhouse</h1>
+    <ul>
+    <% products.forEach( (product) => { %>
+        <li><%= product.name %> (<%= product.price %>)</li>
+    <% }) %>
+    </ul>
+</body>
+</html>
