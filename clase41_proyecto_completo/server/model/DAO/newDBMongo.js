@@ -8,7 +8,7 @@ class NewDBMongoDAO extends NewBaseDAO {
 
     constructor(database, collection) {
         super()
-        ( async () => {
+        return (async () => {
             console.log('Connecting mongo DB ...')
 
             const connection = await MongoClient.connect(`mongodb://127.0.0.1`, {
@@ -18,7 +18,7 @@ class NewDBMongoDAO extends NewBaseDAO {
 
             const db = connection.db(database)
             this._collection = db.collection(collection)
-        })()
+        })();
     }
 
     getNews = async _id => {
